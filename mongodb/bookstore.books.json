@@ -1,0 +1,205 @@
+[{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb1"
+  },
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "rating": 9,
+  "pages": 310,
+  "genres": [
+    "fantasy",
+    "adventure"
+  ],
+  "reviews": [
+    {
+      "nickname": "Peach",
+      "body": "Lorem ipsum dolor sit amet."
+    },
+    {
+      "nickname": "Luigi",
+      "body": "Consectetur adipiscing elit!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb2"
+  },
+  "title": "Dune",
+  "author": "Frank Herbert",
+  "rating": 9,
+  "pages": 412,
+  "genres": [
+    "sci-fi"
+  ],
+  "reviews": [
+    {
+      "nickname": "Toad",
+      "body": "Sed do eiusmod tempor!!!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb3"
+  },
+  "title": "Mistborn: The Final Empire",
+  "author": "Brandon Sanderson",
+  "rating": 8,
+  "pages": 541,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "nickname": "Bowser",
+      "body": "Ut labore et dolore."
+    },
+    {
+      "nickname": "Daisy",
+      "body": "Magna aliqua!!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb4"
+  },
+  "title": "Neuromancer",
+  "author": "William Gibson",
+  "rating": 7,
+  "pages": 271,
+  "genres": [
+    "sci-fi",
+    "cyberpunk"
+  ],
+  "reviews": [
+    {
+      "nickname": "Wario",
+      "body": "Ipsum dolor sit!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb5"
+  },
+  "title": "The Name of the Wind",
+  "author": "Patrick Rothfuss",
+  "rating": 9,
+  "pages": 662,
+  "genres": [
+    "fantasy"
+  ],
+  "reviews": [
+    {
+      "nickname": "Waluigi",
+      "body": "Lorem lorem lorem!!!"
+    },
+    {
+      "nickname": "Rosalina",
+      "body": "Amet consectetur."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb6"
+  },
+  "title": "Foundation",
+  "author": "Isaac Asimov",
+  "rating": 8,
+  "pages": 255,
+  "genres": [
+    "sci-fi"
+  ],
+  "reviews": [
+    {
+      "nickname": "Kirby",
+      "body": "Dolor sit amet ipsum."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb7"
+  },
+  "title": "The Fellowship of the Ring",
+  "author": "J.R.R. Tolkien",
+  "rating": 9,
+  "pages": 423,
+  "genres": [
+    "fantasy",
+    "adventure"
+  ],
+  "reviews": [
+    {
+      "nickname": "Meta Knight",
+      "body": "Tempor incididunt ut!"
+    },
+    {
+      "nickname": "Dedede",
+      "body": "Labore et dolore magna."
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb8"
+  },
+  "title": "Project Hail Mary",
+  "author": "Andy Weir",
+  "rating": 9,
+  "pages": 496,
+  "genres": [
+    "sci-fi"
+  ],
+  "reviews": [
+    {
+      "nickname": "Falco",
+      "body": "Ipsum lorem dolor!!!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beb9"
+  },
+  "title": "The Lies of Locke Lamora",
+  "author": "Scott Lynch",
+  "rating": 8,
+  "pages": 499,
+  "genres": [
+    "fantasy",
+    "heist"
+  ],
+  "reviews": [
+    {
+      "nickname": "Fox",
+      "body": "Sit amet lorem."
+    },
+    {
+      "nickname": "Pikachu",
+      "body": "Consectetur ipsum!!"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6a7625fd847750f70ab5beba"
+  },
+  "title": "Snow Crash",
+  "author": "Neal Stephenson",
+  "rating": 7,
+  "pages": 470,
+  "genres": [
+    "sci-fi",
+    "cyberpunk"
+  ],
+  "reviews": [
+    {
+      "nickname": "Jigglypuff",
+      "body": "Dolore magna aliqua."
+    }
+  ]
+}]
