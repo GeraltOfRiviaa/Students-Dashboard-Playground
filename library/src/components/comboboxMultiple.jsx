@@ -1,70 +1,51 @@
 "use client"
 
 import * as React from "react"
-import getEndpoint from "../api"
-import getApiOptions from "../api"
-import { useEffect, useState} from "react"
-
 import {
   Combobox,
   ComboboxChip,
+  ComboboxChipList,
   ComboboxChips,
   ComboboxChipsInput,
   ComboboxContent,
   ComboboxEmpty,
   ComboboxItem,
   ComboboxList,
-  ComboboxValue,
   useComboboxAnchor,
 } from "@/components/ui/combobox"
+import { Spinner } from "@/components/ui/spinner"
 
-const setGenres = () => {
-    try {
-      const result = fetch(getEndpoint() + "genres", getApiOptions())
-      if (result.length() === 0) {
-        throw new Error("Could not find any genres")
-      }
-      const genres = await 
 
-    } catch (error) {
-      throw new Error("Error when fetching genres")
-    }
+
+
+export function ComboboxMultiple({genres, selected, setSelected}) {
+  const anchor = useComboboxAnchor()
+
+  if (genres.length === 0) {
+    return (
+      <div /*className="bg-white text-gray-600 flex items-center p-2 border border-gray-300 rounded-md size-auto"}*/>
+        <Spinner/>
+      </div>
+    )
   }
 
-export function ComboboxMultiple() {
-  const anchor = useComboboxAnchor()
-  const [genres, setGenres] = useState([])
-
-  useEffect(setGenres())
-  
-  
   return (
     <Combobox
-      multiple
+      selectionMode="multiple"
       autoHighlight
-      items={genres}
-      defaultValue={[genres[0]]}
+      value={selected}
+      onChange={setSelected}
     >
       <ComboboxChips ref={anchor} className="w-full max-w-xs">
-        <ComboboxValue>
-          {(values) => (
-            <React.Fragment>
-              {values.map((value) => (
-                <ComboboxChip key={value}>{value}</ComboboxChip>
-              ))}
-              <ComboboxChipsInput />
-            </React.Fragment>
-          )}
-        </ComboboxValue>
+        <ComboboxChipList>
+          {(item) => <ComboboxChip id={item}>{item}</ComboboxChip>}
+        </ComboboxChipList>
+        <ComboboxChipsInput />
       </ComboboxChips>
       <ComboboxContent anchor={anchor}>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
-        <ComboboxList>
-          {(item) => (
-            <ComboboxItem key={item} value={item}>
-              {item}
-            </ComboboxItem>
-          )}
+        <ComboboxList items={genres}>
+          {(item) => <ComboboxItem id={item}>{item}</ComboboxItem>}
         </ComboboxList>
       </ComboboxContent>
     </Combobox>
