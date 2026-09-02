@@ -1,7 +1,10 @@
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
-MONGODB_DATABASE_CONNECTION_STRING = "mongodb+srv://samuelsvob_db_user:yQPsSBbjyiEAnnht@bookstore.p0cdh9m.mongodb.net/?appName=Bookstore"
+f = open("mongo_connection_string.txt", "r")
+
+CONNECT_STR = f.read()
+f.close()
 
 # Create a new client and connect to the server
-client = MongoClient(MONGODB_DATABASE_CONNECTION_STRING, server_api=ServerApi('1'))
+client = MongoClient(CONNECT_STR, server_api=ServerApi('1'))
