@@ -3,8 +3,10 @@ import { ComboboxMultiple } from "@/components/comboboxMultiple";
 import {GridViewIcon} from "@/components/icons/hugeicons-grid-view"
 import {AppleReminderIcon} from "@/components/icons/hugeicons-apple-reminder"
 import BooksCard from "@/components/booksCards"
+import {getApiOptions, getEndpoint} from "../api"
 
-const endpoint = "http://127.0.0.1:8000/books"
+const endpoint = getEndpoint()
+const options = getApiOptions()
 
 const Home = () => {
   const [genres, setGenres] = useState([])
@@ -14,7 +16,7 @@ const Home = () => {
   const [books, setBooks] = useState([])
 
   const fetchGenres = async () => {
-    const response = await fetch(endpoint + "/genres", { method: "GET" })
+    const response = await fetch(endpoint + "/genres", options)
     return response.json()
   }
 
@@ -61,7 +63,7 @@ const Home = () => {
           <AppleReminderIcon/>
         </div>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-3">
+      <div className="grid gap-3 justify-center grid-cols-[repeat(auto-fit,minmax(280px,20rem))]">
         {booksError
           ? <p>{booksError}</p>
           : books.map((book) => <BooksCard key={book.id} book={book}/>)}

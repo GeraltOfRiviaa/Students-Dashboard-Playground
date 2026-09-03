@@ -1,0 +1,1 @@
+mongodb+srv://samuelsvob_db_user:yQPsSBbjyiEAnnht@bookstore.p0cdh9m.mongodb.net/?appName=Bookstore
