@@ -12,6 +12,7 @@ class BookBase(BaseModel):
     pages: int
     genres: list[str]
     description: str
+    coverUrl: str
 
 class BookCreate(BookBase):
     release_date: datetime = Field(alias="releaseDate")

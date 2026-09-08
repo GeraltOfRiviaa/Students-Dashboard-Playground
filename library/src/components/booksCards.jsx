@@ -6,6 +6,12 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import { Tooltip, TooltipTrigger } from "@/components/ui/tooltip"
+
+import {Link} from "react-router-dom" 
+import {Button} from "@/components/ui/button"
+import {InformationCircleIcon} from "@/components/icons/hugeicons-information-circle"
+
 const BooksCard = ({book}) => {
     return (
     <Card className="@container relative mx-auto w-full max-w-sm h-full m-3 flex flex-col">
@@ -15,7 +21,7 @@ const BooksCard = ({book}) => {
                 <div className="flex flex-row gap-3 w-full">
                     <div>
                         {book.coverUrl ? 
-                            (<img src={book.coverUrl} className="h-[clamp(2.5rem,15cqw,4rem)] w-[clamp(1.5rem,15cqw,2.5rem)] shrink-0 rounded" alt="Book Cover"/>) : 
+                            (<img src={book.coverUrl} className="h-[clamp(2.5rem,12vw,4rem)] w-[clamp(1.5rem,15vw,2.5rem)] shrink-0 rounded" alt="Book Cover"/>) : 
                             (<div className="h-[clamp(2.5rem,12vw,4rem)] w-[clamp(1.5rem,15vw,2.5rem)] shrink-0 rounded bg-gray-400 dark:bg-gray-800 animate-pulse"/>)}
                         
                     </div>
@@ -30,26 +36,32 @@ const BooksCard = ({book}) => {
                 <div>
                     <p className="line-clamp-4">{book.description}</p>
                 </div>
-        </CardContent>
-        <CardFooter className="h-[clamp(2.5rem,12cqw,4rem)] overflow-hidden">
-            <div className="flex flex-row flex-wrap gap-2">
+        </CardContent> 
+        <CardFooter className="h-[clamp(2.5rem,12cqw,4rem)] overflow-hidden  gap-2 items-center justify-between">
+            <div className="flex flex-row flex-wrap gap-2 items-center justify-between">
                 {book.genres.slice(0, 4).map((genre) => (
                     <span
                         key={genre}
-                        className="rounded bg-gray-200 dark:bg-gray-800 px-2 py-0.5 text-xs"
+                        className="rounded bg-chart-1 dark:bg-gray-800 px-2 py-0.5 text-xs"
                     >
                         {genre}
                     </span>
                 ))}
                 {book.genres.length > 4 && (
-                    <span className="rounded bg-gray-200 dark:bg-gray-800 px-2 py-0.5 text-xs text-muted-foreground">
+                    <span className="rounded bg-chart-1 dark:bg-gray-800 px-2 py-0.5 text-xs text-muted-foreground">
                         +{book.genres.length - 4}
                     </span>
                 )}
-                <span className="rounded bg-gray-200 dark:bg-gray-800 px-2 py-0.5 text-xs">
-                    pages: {book.pages}
-                </span>
+                <TooltipTrigger >
+                        <InformationCircleIcon/>
+                        <Tooltip>
+                            <p>Pages: {book.pages}</p>
+                        </Tooltip>
+                </TooltipTrigger>
             </div>
+            <Link to={`/books/${book._id}`}>
+                <Button size="sm" variant="default"className="shrink-0">Detail</Button>
+            </Link>
         </CardFooter>
     </Card>
     )

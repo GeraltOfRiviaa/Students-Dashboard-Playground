@@ -21,7 +21,7 @@ const Home = () => {
   }
 
   const fetchBooks = async () => {
-    const response = await fetch(endpoint , { method: "GET" }) 
+    const response = await fetch(endpoint , options) 
     return response.json()
   }
 
@@ -66,7 +66,7 @@ const Home = () => {
       <div className="grid gap-3 justify-center grid-cols-[repeat(auto-fit,minmax(280px,20rem))]">
         {booksError
           ? <p>{booksError}</p>
-          : books.map((book) => <BooksCard key={book.id} book={book}/>)}
+          : books.map((book) => <BooksCard key={book._id} book={book}/>)}
       </div>
     </div>
   )
