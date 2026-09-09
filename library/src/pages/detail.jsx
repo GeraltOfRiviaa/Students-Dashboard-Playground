@@ -1,41 +1,4 @@
-/*import React from 'react'
-import { useParams } from 'react-router-dom'
-import { getEndpoint, getApiOptions } from '@/api'
-import { useState, useEffect } from 'react'
 
-const endpoint = getEndpoint()
-const options = getApiOptions()
-
-
-const Detail = () => {
-  const {id} = useParams()
-  const [bookError, setBookError] = useState('')
-  const [book, setBook] = useState([])
-
-  const fetchBook = async () => {
-      const response = await fetch(endpoint + `/${id}`, options) 
-      return response.json()
-    }
-  
-    useEffect(() => {
-      let cancelled = false
-      fetchBook()
-        .then((data) => { if (!cancelled) setBook(data) })
-        .catch((e) => {
-          console.error(`Error fetching the book: ${e}`)
-          setBookError('Error fetching the book. Please try again later')
-        })
-      return () => { cancelled = true }
-    }, [])
-  
-  
-  return ()
-    
-}
-
-export default Detail 
-
-*/
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -90,12 +53,15 @@ export default function Detail() {
   }
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-8 bg-white p-5 md:grid md:grid-cols-[300px_1fr] md:p-10">
+    <main className="mt-3 mx-auto flex min-h-screen w-full max-w-4xl flex-col gap-8 bg-white p-5 md:grid md:grid-cols-[300px_1fr] md:p-10">
       
       {/* Left Column: Cover Preview */}
+
+      { isLoading ?
+      
       <section
         aria-label="Book cover preview"
-        className="flex h-fit flex-col items-center justify-center gap-4 rounded-xl bg-slate-900 p-8 shadow-lg"
+        className="flex h-10 flex-col items-center justify-center gap-4 rounded-xl bg-slate-900 p-8 shadow-lg "
       >
         
         
@@ -121,10 +87,20 @@ export default function Detail() {
               {book?.author?.name} {book?.author?.surname}
             </p>
           )}
-        </article>) 
+        </article>
         
         
       </section>
+      :
+      <div className="flex h-fit flex-col items-center justify-center gap-4 rounded-xl bg-slate-900 p-8 shadow-lg">
+        <img src={book.coverUrl}/>
+      </div> 
+      } 
+     
+      
+      
+
+      
 
       {/* Right Column: Book Details */}
       <div className="flex flex-col gap-6">
