@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge";
 
 import { Tooltip, TooltipTrigger } from "@/components/ui/tooltip"
 
@@ -40,12 +41,7 @@ const BooksCard = ({book}) => {
         <CardFooter className="h-[clamp(2.5rem,12cqw,4rem)] overflow-hidden  gap-2 items-center justify-between">
             <div className="flex flex-row flex-wrap gap-2 items-center justify-between">
                 {book.genres.slice(0, 4).map((genre) => (
-                    <span
-                        key={genre}
-                        className="rounded bg-chart-1 dark:bg-gray-800 px-2 py-0.5 text-xs"
-                    >
-                        {genre}
-                    </span>
+                    <Badge key={genre} variant="secondary" className="bg-blue-50 text-blue-600 hover:bg-blue-100">{genre}</Badge>
                 ))}
                 {book.genres.length > 4 && (
                     <span className="rounded bg-chart-1 dark:bg-gray-800 px-2 py-0.5 text-xs text-muted-foreground">

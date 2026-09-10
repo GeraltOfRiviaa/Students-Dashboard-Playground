@@ -1,10 +1,16 @@
-from fastapi import FastAPI, HTTPException
-from models import Book, BookCreate, BookUpdate
+from fastapi import Depends, FastAPI, HTTPException, Query
+from models import Book, BookCreate, BookUpdate, User
 from database import client
 from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
+import re
+from typing import Optional, List, Annotated
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+
 
 app = FastAPI()
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,11 +30,22 @@ try:
     print("Pinged your deployment. You successfully connected to MongoDB!")
 except Exception as e:
     print(e)
-    
-    
+
+def fake_decode_token(token):
+    return User(
+        username=token + "fakedecoded", email="john@example.com", full_name="John Doe"
+    )
+
+def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
+    user = fake_decode_token(token)
+    return user
+
+@app.get("/users/me")
+async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]):
+    return current_user
 
 @app.get("/books")
-def get_books() -> list:
+def get_books(token: Annotated[str, Depends(oauth2_scheme)]) -> list:
     """get all books and everything about them"""
     try:
         books = list(books_collection.find())
@@ -39,7 +56,7 @@ def get_books() -> list:
         raise HTTPException(status_code=404, detail="Could not fetch books: " + str(e))
 
 @app.get("/books/genres")
-def get_genres():
+def get_genres(token: Annotated[str, Depends(oauth2_scheme)]):
     """Get all unique genres from the books collection"""
     try:
         genres = books_collection.distinct("genres")
@@ -48,13 +65,25 @@ def get_genres():
         raise HTTPException(status_code=500, detail="Could not fetch genres: " + str(e))
 
 @app.get("/books/search")
-def search_books(query: str):
-    """get a book by searching for its title or author"""
+def search_books(token: Annotated[str, Depends(oauth2_scheme)], query: Optional[str] = None, genres: Optional[List[str]] = Query(None)):
     try:
-        books = list(books_collection.find(
-            {"$text": {"$search": query}},
-            {"relevance": {"$meta": "textScore"}}
-        ).sort([("relevance", {"$meta": "textScore"})]))
+        conditions = []
+
+        if query:
+            safe_query = re.escape(query)
+            conditions.append({
+                "$or": [
+                    {"title": {"$regex": safe_query, "$options": "i"}},
+                    {"author": {"$regex": safe_query, "$options": "i"}},
+                ]
+            })
+
+        if genres:
+            conditions.append({"genres": {"$all": genres}})
+
+        filter_query = {"$and": conditions} if conditions else {}
+
+        books = list(books_collection.find(filter_query))
         for book in books:
             book["_id"] = str(book["_id"])
         return books
@@ -62,7 +91,7 @@ def search_books(query: str):
         raise HTTPException(status_code=404, detail="Could not search books: " + str(e))
 
 @app.get("/books/{book_id}")
-def get_book(book_id: str) -> Book:
+def get_book(token: Annotated[str, Depends(oauth2_scheme)], book_id: str) -> Book:
     """get a book by its ID"""
     try:
         if ObjectId.is_valid(book_id): 
@@ -76,7 +105,7 @@ def get_book(book_id: str) -> Book:
         raise HTTPException(status_code=500, detail="Could not fetch book: " + str(e))
     
 @app.patch("/books/{book_id}", response_model=Book, status_code=201)
-def update_book(book_id: str, updated_book: BookUpdate):
+def update_book(token: Annotated[str, Depends(oauth2_scheme)], book_id: str, updated_book: BookUpdate):
     """Update an existing book in the database"""
     try:
         if ObjectId.is_valid(book_id):
@@ -96,7 +125,7 @@ def update_book(book_id: str, updated_book: BookUpdate):
 
 
 @app.post("/books", response_model=Book, status_code=201)
-def create_book(book: BookCreate):
+def create_book(token: Annotated[str, Depends(oauth2_scheme)], book: BookCreate):
     """Create a new book in the database"""
     try:
         book_dict = book.model_dump(by_alias=True)
@@ -108,7 +137,7 @@ def create_book(book: BookCreate):
 
 
 @app.delete("/books/{book_id}")
-def delete_book(book_id: str):
+def delete_book(token: Annotated[str, Depends(oauth2_scheme)], book_id: str):
     """Delete a book from a database by its ID"""
     if ObjectId.is_valid(book_id):
         try:

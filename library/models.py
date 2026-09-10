@@ -30,3 +30,8 @@ class Book(BookBase):
 
 class Config:
     populate_by_name = True
+
+class User(BaseModel):
+    username: str | None = None
+    email: str | None = None
+    disabled:bool | None = None

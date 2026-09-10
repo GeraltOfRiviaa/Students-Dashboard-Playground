@@ -1,15 +1,12 @@
-import  {Button}  from "@/components/ui/button"
+
 import  {BookOpen01Icon}  from "@/components/icons/hugeicons-book-open-01"
-import  {Search01Icon}  from "@/components/icons/hugeicons-search-01"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group"
-
 import { Link } from "react-router-dom"
+import Search from "./search"
+import { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({searchTerm, setSearchTerm}) => {
+
+
   return (
     <div className="flex flex-row justify-between gap-10 p-2 shadow-sm">
         <div className="flex align-middle">
@@ -22,12 +19,7 @@ const Navbar = () => {
         </div>
         
         <div className="">
-            <InputGroup className="max-w-xs">
-                <InputGroupInput placeholder="Search..." />
-                    <InputGroupAddon>
-                        <Search01Icon/>
-                    </InputGroupAddon>
-            </InputGroup>
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </div>
     </div>
   )

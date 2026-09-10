@@ -1,13 +1,16 @@
 import React from 'react'
 import Navbar from './components/navbar'
 import { Outlet } from 'react-router-dom'
+import { useState } from 'react'
 
 const Layout = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <div>
-    <Navbar/>
+    <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
     <main>
-        <Outlet/>
+        <Outlet context={{searchTerm }}/>
     </main>
     </div>
   )
