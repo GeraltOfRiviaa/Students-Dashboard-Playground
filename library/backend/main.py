@@ -1,16 +1,18 @@
 from fastapi import Depends, FastAPI, HTTPException, Query
-from models import Book, BookCreate, BookUpdate, User
-from database import client
+from library.backend.models import Book, BookCreate, BookUpdate, User
+from library.backend.database import client
 from bson import ObjectId
 from fastapi.middleware.cors import CORSMiddleware
 import re
 from typing import Optional, List, Annotated
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from httpx_oauth.clients.google import GoogleOAuth2
 
 
 app = FastAPI()
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+google_oauth_client = GoogleOAuth2("CLIENT_ID", "CLIENT_SECRET")
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,18 +33,10 @@ try:
 except Exception as e:
     print(e)
 
-def fake_decode_token(token):
-    return User(
-        username=token + "fakedecoded", email="john@example.com", full_name="John Doe"
-    )
 
-def get_current_user(token: Annotated[str, Depends(oauth2_scheme)]):
-    user = fake_decode_token(token)
-    return user
 
-@app.get("/users/me")
-async def read_users_me(current_user: Annotated[User, Depends(get_current_user)]):
-    return current_user
+# Routes
+#---------------------------------------------------------------------
 
 @app.get("/books")
 def get_books(token: Annotated[str, Depends(oauth2_scheme)]) -> list:
