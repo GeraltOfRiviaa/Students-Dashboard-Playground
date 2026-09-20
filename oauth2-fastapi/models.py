@@ -1,8 +1,11 @@
-from pydantic import BaseModel, EmailStr
-from bson import ObjectId
+from pydantic import BaseModel, EmailStr, Field
+
 
 class User(BaseModel):
-    _id: ObjectId
+    id: str |  None = Field(default=None, alias="_id")
     nickname: str
     email: EmailStr
     passwordHash: str
+    
+    class Config:
+        populate_by_name = True

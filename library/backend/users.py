@@ -1,28 +1,25 @@
-from fastapi import FastAPI, Depends, HTTPException
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from models import User
 import bcrypt
-from database import client
 from bson import ObjectId
-import jwt
+from fastapi import Depends, HTTPException
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 import httpx
+import jwt
 from dotenv import load_dotenv
 from os import getenv
 
-database = client["oauth2_fastapi"]
+from library.backend.models import User
+from library.backend.database import client
 
+database = client["bookstore"]
+users_collection = database["users"]
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
+
+JWT_SECRET = 'secret'
 load_dotenv()
 
 CLIENT_ID = getenv('CLIENT_ID')
 CLIENT_SECRET = getenv('CLIENT_SECRET')
-
-users_collection = database["users"]
-
-JWT_SECRET = 'secret'
-
-app = FastAPI()
-
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
 def hash_password(password: str) -> str:
     return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
@@ -53,61 +50,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     except Exception as e:
             raise HTTPException(status_code=401, detail="Could not get current user: " + str(e))
 
-@app.post("/token")
-async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    
-    try:
-        user = auth_user(form_data.username, form_data.password)
-        
-        if not user:
-            raise HTTPException(status_code=401, detail="Invalid username or password: ")
-        
-        payload = {
-            "sub": str(user["_id"]),
-            "nickname": user["nickname"],
-        }
-        
-        token = jwt.encode(payload, JWT_SECRET)
-        
-        return {'access_token': token, 'token_type' : 'bearer'}
-        
-    except Exception as e:
-        raise HTTPException(status_code=401, detail="Could not generate a token:" + str(e))
-    
 
-@app.post("/users", response_model=User)
-async def create_user(user: User):
-    """Create a new user."""
-    try:
-        user_dict = user.model_dump(by_alias=True, exclude_none=True)
-        user_dict["passwordHash"] = hash_password(user_dict["passwordHash"])
-        result = users_collection.insert_one(user_dict)
-        user_dict["_id"] = str(result.inserted_id)
-        return user_dict
-    except Exception as e:
-        raise HTTPException(status_code=500, detail="Could not create user: " + str(e))
-    
-
-@app.get('/users/me', response_model=User)
-async def get_user(user: User = Depends(get_current_user)):
-    
-    return user
-
-
-@app.get("/auth/login")
-async def login():
-    google_auth_url = (
-        "https://accounts.google.com/o/oauth2/v2/auth"
-        f"?client_id={CLIENT_ID}"
-        "&redirect_uri=http://localhost:8000/auth/callback"
-        "&response_type=code"
-        "&scope=openid%20email%20profile"
-        "&access_type=offline"
-    )
-    return {"url": google_auth_url}  # paste this in your browser manually
-
-
-@app.get("/auth/callback")
 async def exchange_code(code: str):
     try:
         async with httpx.AsyncClient() as client:
@@ -145,12 +88,47 @@ async def exchange_code(code: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=401, detail="Could not exchange code with google: " + str(e))
+    
+async def login():
+    google_auth_url = (
+        "https://accounts.google.com/o/oauth2/v2/auth"
+        f"?client_id={CLIENT_ID}"
+        "&redirect_uri=http://localhost:8000/auth/callback"
+        "&response_type=code"
+        "&scope=openid%20email%20profile"
+        "&access_type=offline"
+    )
+    return google_auth_url 
 
-
-@app.get("/users/google")
-async def get_user_google():
+async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
+    
     try:
-        payload = jwt.decode("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMTM1NDQ3MDc2NDY2NTY3ODg0NzEiLCJlbWFpbCI6InNhbXVlbHN2b2JAZ21haWwuY29tIiwibmFtZSI6IlNhbXVlbCBTdm9ib2RhIn0.RARzzRDZ8iOeQaZB7jcbemB1NgnT-1CMNI8sAVCxx10", JWT_SECRET, algorithms=["HS256"])
-        return payload
+        user = auth_user(form_data.username, form_data.password)
+        
+        if not user:
+            raise HTTPException(status_code=401, detail="Invalid username or password: ")
+        
+        payload = {
+            "sub": str(user["_id"]),
+            "nickname": user["nickname"],
+        }
+        
+        token = jwt.encode(payload, JWT_SECRET)
+        
+        return {'access_token': token, 'token_type' : 'bearer'}
+        
     except Exception as e:
-        raise HTTPException(status_code=401, detail="Invalid token: " + str(e))
+        raise HTTPException(status_code=401, detail="Could not generate a token:" + str(e))
+    
+async def create_user(user: User):
+    """Create a new user."""
+    try:
+        user_dict = user.model_dump(by_alias=True, exclude_none=True)
+        user_dict["passwordHash"] = hash_password(user_dict["passwordHash"])
+        result = users_collection.insert_one(user_dict)
+        user_dict["_id"] = str(result.inserted_id)
+        return user_dict
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Could not create user: " + str(e))
+    
+
