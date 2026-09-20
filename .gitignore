@@ -2,3 +2,4 @@ FARM-generator
 oauth2-fastapi\.venv
 library\.venv
 .env
+library\backend\fetch_covers.py
