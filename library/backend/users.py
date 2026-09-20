@@ -7,8 +7,8 @@ import jwt
 from dotenv import load_dotenv
 from os import getenv
 
-from library.backend.models import User
-from library.backend.database import client
+from models import UserCreate
+from database import client
 
 database = client["bookstore"]
 users_collection = database["users"]
@@ -120,7 +120,7 @@ async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
     except Exception as e:
         raise HTTPException(status_code=401, detail="Could not generate a token:" + str(e))
     
-async def create_user(user: User):
+async def create_user(user: UserCreate):
     """Create a new user."""
     try:
         user_dict = user.model_dump(by_alias=True, exclude_none=True)

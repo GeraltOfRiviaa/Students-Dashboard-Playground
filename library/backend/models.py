@@ -24,14 +24,17 @@ class BookUpdate(BaseModel):
     description: str | None = None
 
 class Book(BookBase):
-    id: str = Field(alias="_id")
+    id: str | None = Field(default=None, alias="_id")
     release_date: datetime = Field(alias="releaseDate")
-    score: float | None = None
 
 class Config:
     populate_by_name = True
 
-class User(BaseModel):
-    username: str | None = None
-    email: str | None = None
-    disabled:bool | None = None
+class UserBase(BaseModel):
+    nickname: str
+
+class UserCreate(UserBase):
+    passwordHash: str  # plain password in from the client, hashed before insert
+
+class User(UserBase):
+    id: str = Field(alias="_id")

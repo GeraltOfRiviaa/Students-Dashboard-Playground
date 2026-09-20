@@ -2,14 +2,15 @@ import re
 from typing import List, Optional
 
 from bson import ObjectId
-from fastapi import HTTPException, Query
-from library.backend.database import client
-from library.backend.models import Book, BookCreate, BookUpdate
+from fastapi import Depends, HTTPException, Query
+from database import client
+from models import Book, BookCreate, BookUpdate, User
+from users import get_current_user
 
 database = client["bookstore"]
 books_collection = database["books"]
 
-def delete_book( book_id: str):
+def delete_book(book_id: str, user: User = Depends(get_current_user)):
     """Delete a book from a database by its ID"""
     if ObjectId.is_valid(book_id):
         try:
@@ -26,7 +27,7 @@ def delete_book( book_id: str):
     else:
         raise HTTPException(status_code=400, detail="Wrong book id")
     
-def create_book( book: BookCreate):
+def create_book(book: BookCreate, user: User = Depends(get_current_user)):
     """Create a new book in the database"""
     try:
         book_dict = book.model_dump(by_alias=True)
