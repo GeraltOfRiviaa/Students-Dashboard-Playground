@@ -1,0 +1,948 @@
+[{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165ef"
+  },
+  "title": "Pride and Prejudice",
+  "author": {
+    "name": "Jane",
+    "surname": "Austen",
+    "nationality": "GB"
+  },
+  "pages": 279,
+  "genres": [
+    "Classic",
+    "Romance"
+  ],
+  "description": "A witty look at manners, marriage, and misjudged first impressions in Regency England.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14348537-L.jpg",
+  "releaseDate": "1813-01-28T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f0"
+  },
+  "title": "1984",
+  "author": {
+    "name": "George",
+    "surname": "Orwell",
+    "nationality": "GB"
+  },
+  "pages": 328,
+  "genres": [
+    "Dystopian",
+    "Sci-Fi"
+  ],
+  "description": "A totalitarian state watches every move its citizens make, down to their thoughts.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/8745958-L.jpg",
+  "releaseDate": "1949-06-08T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f1"
+  },
+  "title": "Brave New World",
+  "author": {
+    "name": "Aldous",
+    "surname": "Huxley",
+    "nationality": "GB"
+  },
+  "pages": 311,
+  "genres": [
+    "Dystopian",
+    "Sci-Fi"
+  ],
+  "description": "A future society engineers happiness at the cost of freedom and individuality.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/8231823-L.jpg",
+  "releaseDate": "1932-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f2"
+  },
+  "title": "The Great Gatsby",
+  "author": {
+    "name": "F. Scott",
+    "surname": "Fitzgerald",
+    "nationality": "USA"
+  },
+  "pages": 180,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A mysterious millionaire chases a lost love amid the excess of the Jazz Age.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/10590366-L.jpg",
+  "releaseDate": "1925-04-10T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f3"
+  },
+  "title": "To Kill a Mockingbird",
+  "author": {
+    "name": "Harper",
+    "surname": "Lee",
+    "nationality": "USA"
+  },
+  "pages": 281,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A small Southern town confronts prejudice through the eyes of a young girl.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14351077-L.jpg",
+  "releaseDate": "1960-07-11T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f4"
+  },
+  "title": "Moby-Dick",
+  "author": {
+    "name": "Herman",
+    "surname": "Melville",
+    "nationality": "USA"
+  },
+  "pages": 635,
+  "genres": [
+    "Classic",
+    "Adventure"
+  ],
+  "description": "A whaling captain's obsessive hunt for the great white whale that maimed him.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/10544254-L.jpg",
+  "releaseDate": "1851-10-18T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f5"
+  },
+  "title": "War and Peace",
+  "author": {
+    "name": "Leo",
+    "surname": "Tolstoy",
+    "nationality": "RUS"
+  },
+  "pages": 1225,
+  "genres": [
+    "Classic",
+    "Historical"
+  ],
+  "description": "Sweeping lives of Russian aristocrats collide with Napoleon's invasion of Russia.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12621906-L.jpg",
+  "releaseDate": "1869-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f6"
+  },
+  "title": "Crime and Punishment",
+  "author": {
+    "name": "Fyodor",
+    "surname": "Dostoevsky",
+    "nationality": "RUS"
+  },
+  "pages": 671,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A poor student's murder plot spirals into guilt, paranoia, and confession.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/13116014-L.jpg",
+  "releaseDate": "1866-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f7"
+  },
+  "title": "The Brothers Karamazov",
+  "author": {
+    "name": "Fyodor",
+    "surname": "Dostoevsky",
+    "nationality": "RUS"
+  },
+  "pages": 824,
+  "genres": [
+    "Classic",
+    "Philosophy"
+  ],
+  "description": "Three brothers wrestle with faith, doubt, and their father's murder.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/11263774-L.jpg",
+  "releaseDate": "1880-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f8"
+  },
+  "title": "Anna Karenina",
+  "author": {
+    "name": "Leo",
+    "surname": "Tolstoy",
+    "nationality": "RUS"
+  },
+  "pages": 864,
+  "genres": [
+    "Classic",
+    "Romance"
+  ],
+  "description": "A married woman's affair unravels her place in Russian high society.",
+  "coverUrl": "",
+  "releaseDate": "1878-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165f9"
+  },
+  "title": "Don Quixote",
+  "author": {
+    "name": "Miguel",
+    "surname": "de Cervantes",
+    "nationality": "ESP"
+  },
+  "pages": 863,
+  "genres": [
+    "Classic",
+    "Comedy"
+  ],
+  "description": "An aging nobleman sets out as a knight-errant, tilting at windmills along the way.",
+  "coverUrl": "",
+  "releaseDate": "1605-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165fa"
+  },
+  "title": "The Odyssey",
+  "author": {
+    "name": "",
+    "surname": "Homer",
+    "nationality": "GRC"
+  },
+  "pages": 541,
+  "genres": [
+    "Classic",
+    "Adventure"
+  ],
+  "description": "A king's ten-year voyage home is beset by monsters, gods, and temptation.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12474938-L.jpg",
+  "releaseDate": "1900-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165fb"
+  },
+  "title": "The Iliad",
+  "author": {
+    "name": "",
+    "surname": "Homer",
+    "nationality": "GRC"
+  },
+  "pages": 683,
+  "genres": [
+    "Classic",
+    "War"
+  ],
+  "description": "The final weeks of the Trojan War are shaped by rage, honor, and fate.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12621988-L.jpg",
+  "releaseDate": "1900-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165fc"
+  },
+  "title": "Frankenstein",
+  "author": {
+    "name": "Mary",
+    "surname": "Shelley",
+    "nationality": "GB"
+  },
+  "pages": 280,
+  "genres": [
+    "Horror",
+    "Sci-Fi"
+  ],
+  "description": "A scientist's created being turns his life into a spiral of grief and revenge.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12356249-L.jpg",
+  "releaseDate": "1818-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165fd"
+  },
+  "title": "Dracula",
+  "author": {
+    "name": "Bram",
+    "surname": "Stoker",
+    "nationality": "IRL"
+  },
+  "pages": 418,
+  "genres": [
+    "Horror",
+    "Classic"
+  ],
+  "description": "A Transylvanian count's arrival in England brings a trail of the undead.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12216503-L.jpg",
+  "releaseDate": "1897-05-26T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165fe"
+  },
+  "title": "The Picture of Dorian Gray",
+  "author": {
+    "name": "Oscar",
+    "surname": "Wilde",
+    "nationality": "IRL"
+  },
+  "pages": 254,
+  "genres": [
+    "Classic",
+    "Horror"
+  ],
+  "description": "A man stays eternally young while his hidden portrait bears the cost of his sins.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14314858-L.jpg",
+  "releaseDate": "1890-07-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f1192165ff"
+  },
+  "title": "Heart of Darkness",
+  "author": {
+    "name": "Joseph",
+    "surname": "Conrad",
+    "nationality": "GB"
+  },
+  "pages": 96,
+  "genres": [
+    "Classic",
+    "Adventure"
+  ],
+  "description": "A riverboat journey into the Congo becomes a descent into human darkness.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12307847-L.jpg",
+  "releaseDate": "1899-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216600"
+  },
+  "title": "The Metamorphosis",
+  "author": {
+    "name": "Franz",
+    "surname": "Kafka",
+    "nationality": "CZE"
+  },
+  "pages": 201,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A man wakes transformed into an insect and watches his family turn away.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/6889547-L.jpg",
+  "releaseDate": "1915-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216601"
+  },
+  "title": "The Trial",
+  "author": {
+    "name": "Franz",
+    "surname": "Kafka",
+    "nationality": "CZE"
+  },
+  "pages": 255,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A man is arrested and prosecuted by a remote, inaccessible authority for an unnamed crime.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14910748-L.jpg",
+  "releaseDate": "1925-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216602"
+  },
+  "title": "One Hundred Years of Solitude",
+  "author": {
+    "name": "Gabriel",
+    "surname": "García Márquez",
+    "nationality": "COL"
+  },
+  "pages": 417,
+  "genres": [
+    "Classic",
+    "Fantasy"
+  ],
+  "description": "Seven generations of one family live and die in the mythical town of Macondo.",
+  "coverUrl": "",
+  "releaseDate": "1967-05-30T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216603"
+  },
+  "title": "The Alchemist",
+  "author": {
+    "name": "Paulo",
+    "surname": "Coelho",
+    "nationality": "BRA"
+  },
+  "pages": 208,
+  "genres": [
+    "Fantasy",
+    "Adventure"
+  ],
+  "description": "A shepherd boy crosses the desert in search of a treasure and his own destiny.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/11556106-L.jpg",
+  "releaseDate": "1988-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216604"
+  },
+  "title": "Love in the Time of Cholera",
+  "author": {
+    "name": "Gabriel",
+    "surname": "García Márquez",
+    "nationality": "COL"
+  },
+  "pages": 348,
+  "genres": [
+    "Romance",
+    "Classic"
+  ],
+  "description": "A man waits over fifty years to declare his love again to the same woman.",
+  "coverUrl": "",
+  "releaseDate": "1985-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216605"
+  },
+  "title": "The Little Prince",
+  "author": {
+    "name": "Antoine",
+    "surname": "de Saint-Exupéry",
+    "nationality": "FRA"
+  },
+  "pages": 96,
+  "genres": [
+    "Fantasy",
+    "Philosophy"
+  ],
+  "description": "A stranded pilot meets a small prince who has traveled from a tiny asteroid.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/10746692-L.jpg",
+  "releaseDate": "1943-04-06T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216606"
+  },
+  "title": "Les Misérables",
+  "author": {
+    "name": "Victor",
+    "surname": "Hugo",
+    "nationality": "FRA"
+  },
+  "pages": 1462,
+  "genres": [
+    "Classic",
+    "Historical"
+  ],
+  "description": "An ex-convict seeks redemption while a relentless inspector hunts him across France.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12721865-L.jpg",
+  "releaseDate": "1862-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216607"
+  },
+  "title": "The Count of Monte Cristo",
+  "author": {
+    "name": "Alexandre",
+    "surname": "Dumas",
+    "nationality": "FRA"
+  },
+  "pages": 1276,
+  "genres": [
+    "Adventure",
+    "Classic"
+  ],
+  "description": "A wrongly imprisoned man escapes to build a fortune and exact elaborate revenge.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14937760-L.jpg",
+  "releaseDate": "1844-08-28T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216608"
+  },
+  "title": "Madame Bovary",
+  "author": {
+    "name": "Gustave",
+    "surname": "Flaubert",
+    "nationality": "FRA"
+  },
+  "pages": 304,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A doctor's wife chases romantic fantasy and ruin in provincial France.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12993424-L.jpg",
+  "releaseDate": "1857-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216609"
+  },
+  "title": "The Stranger",
+  "author": {
+    "name": "Albert",
+    "surname": "Camus",
+    "nationality": "FRA"
+  },
+  "pages": 123,
+  "genres": [
+    "Classic",
+    "Philosophy"
+  ],
+  "description": "A detached man's indifference is put on trial after a senseless killing.",
+  "coverUrl": "",
+  "releaseDate": "1942-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660a"
+  },
+  "title": "Siddhartha",
+  "author": {
+    "name": "Hermann",
+    "surname": "Hesse",
+    "nationality": "DEU"
+  },
+  "pages": 152,
+  "genres": [
+    "Philosophy",
+    "Classic"
+  ],
+  "description": "A man abandons privilege to seek enlightenment along the banks of a river.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/6562535-L.jpg",
+  "releaseDate": "1922-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660b"
+  },
+  "title": "The Sorrows of Young Werther",
+  "author": {
+    "name": "Johann Wolfgang",
+    "surname": "von Goethe",
+    "nationality": "DEU"
+  },
+  "pages": 176,
+  "genres": [
+    "Classic",
+    "Romance"
+  ],
+  "description": "A young artist's unrequited love spirals into despair through a series of letters.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9197454-L.jpg",
+  "releaseDate": "1774-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660c"
+  },
+  "title": "Faust",
+  "author": {
+    "name": "Johann Wolfgang",
+    "surname": "von Goethe",
+    "nationality": "DEU"
+  },
+  "pages": 158,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A restless scholar trades his soul to the devil for knowledge and pleasure.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/6499459-L.jpg",
+  "releaseDate": "1808-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660d"
+  },
+  "title": "All Quiet on the Western Front",
+  "author": {
+    "name": "Erich Maria",
+    "surname": "Remarque",
+    "nationality": "DEU"
+  },
+  "pages": 296,
+  "genres": [
+    "War",
+    "Classic"
+  ],
+  "description": "A young German soldier's idealism is shattered by the horrors of the trenches.",
+  "coverUrl": "",
+  "releaseDate": "1929-01-29T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660e"
+  },
+  "title": "The Name of the Rose",
+  "author": {
+    "name": "Umberto",
+    "surname": "Eco",
+    "nationality": "ITA"
+  },
+  "pages": 566,
+  "genres": [
+    "Mystery",
+    "Historical"
+  ],
+  "description": "A monk investigates a string of deaths in a medieval abbey full of secrets.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/15023290-L.jpg",
+  "releaseDate": "1980-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921660f"
+  },
+  "title": "If on a Winter's Night a Traveler",
+  "author": {
+    "name": "Italo",
+    "surname": "Calvino",
+    "nationality": "ITA"
+  },
+  "pages": 260,
+  "genres": [
+    "Fantasy",
+    "Philosophy"
+  ],
+  "description": "A reader chases a novel that keeps interrupting itself with new beginnings.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12007967-L.jpg",
+  "releaseDate": "1979-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216610"
+  },
+  "title": "Norwegian Wood",
+  "author": {
+    "name": "Haruki",
+    "surname": "Murakami",
+    "nationality": "JPN"
+  },
+  "pages": 296,
+  "genres": [
+    "Romance",
+    "Drama"
+  ],
+  "description": "A student's memories of first love are tangled with loss and mental illness.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/2237620-L.jpg",
+  "releaseDate": "1987-08-04T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216611"
+  },
+  "title": "Kafka on the Shore",
+  "author": {
+    "name": "Haruki",
+    "surname": "Murakami",
+    "nationality": "JPN"
+  },
+  "pages": 505,
+  "genres": [
+    "Fantasy",
+    "Mystery"
+  ],
+  "description": "A runaway teenager's story intertwines with an old man who talks to cats.",
+  "coverUrl": "",
+  "releaseDate": "2002-09-12T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216612"
+  },
+  "title": "The Book Thief",
+  "author": {
+    "name": "Markus",
+    "surname": "Zusak",
+    "nationality": "AUS"
+  },
+  "pages": 552,
+  "genres": [
+    "Historical",
+    "War"
+  ],
+  "description": "A girl in Nazi Germany finds solace in stolen books, narrated by Death itself.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/8153054-L.jpg",
+  "releaseDate": "2005-03-14T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216613"
+  },
+  "title": "Life of Pi",
+  "author": {
+    "name": "Yann",
+    "surname": "Martel",
+    "nationality": "CAN"
+  },
+  "pages": 319,
+  "genres": [
+    "Adventure",
+    "Fantasy"
+  ],
+  "description": "A boy survives a shipwreck by sharing a lifeboat with a Bengal tiger.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12840573-L.jpg",
+  "releaseDate": "2001-09-11T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216614"
+  },
+  "title": "The Handmaid's Tale",
+  "author": {
+    "name": "Margaret",
+    "surname": "Atwood",
+    "nationality": "CAN"
+  },
+  "pages": 311,
+  "genres": [
+    "Dystopian",
+    "Sci-Fi"
+  ],
+  "description": "A woman is stripped of her identity in a totalitarian regime built on forced fertility.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/8231851-L.jpg",
+  "releaseDate": "1985-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216615"
+  },
+  "title": "Never Let Me Go",
+  "author": {
+    "name": "Kazuo",
+    "surname": "Ishiguro",
+    "nationality": "GB"
+  },
+  "pages": 288,
+  "genres": [
+    "Sci-Fi",
+    "Drama"
+  ],
+  "description": "Three friends slowly uncover the grim purpose behind their sheltered upbringing.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/1047334-L.jpg",
+  "releaseDate": "2005-02-17T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216616"
+  },
+  "title": "The Remains of the Day",
+  "author": {
+    "name": "Kazuo",
+    "surname": "Ishiguro",
+    "nationality": "GB"
+  },
+  "pages": 245,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "An aging butler reflects on a lifetime of duty and a love he never voiced.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/95742-L.jpg",
+  "releaseDate": "1989-01-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216617"
+  },
+  "title": "Slaughterhouse-Five",
+  "author": {
+    "name": "Kurt",
+    "surname": "Vonnegut",
+    "nationality": "USA"
+  },
+  "pages": 275,
+  "genres": [
+    "Sci-Fi",
+    "War"
+  ],
+  "description": "A soldier becomes unstuck in time, reliving the firebombing of Dresden and beyond.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12727001-L.jpg",
+  "releaseDate": "1969-03-31T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216618"
+  },
+  "title": "Catch-22",
+  "author": {
+    "name": "Joseph",
+    "surname": "Heller",
+    "nationality": "USA"
+  },
+  "pages": 453,
+  "genres": [
+    "War",
+    "Comedy"
+  ],
+  "description": "A bombardier's attempts to be declared insane run into an unbeatable bureaucratic trap.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/6468653-L.jpg",
+  "releaseDate": "1961-11-10T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216619"
+  },
+  "title": "One Flew Over the Cuckoo's Nest",
+  "author": {
+    "name": "Ken",
+    "surname": "Kesey",
+    "nationality": "USA"
+  },
+  "pages": 272,
+  "genres": [
+    "Drama",
+    "Classic"
+  ],
+  "description": "A rebellious new patient upends the rigid order of a psychiatric ward.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9272688-L.jpg",
+  "releaseDate": "1962-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661a"
+  },
+  "title": "The Catcher in the Rye",
+  "author": {
+    "name": "J.D.",
+    "surname": "Salinger",
+    "nationality": "USA"
+  },
+  "pages": 234,
+  "genres": [
+    "Classic",
+    "Drama"
+  ],
+  "description": "A disillusioned teenager wanders New York after being expelled from school.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/9273490-L.jpg",
+  "releaseDate": "1951-07-16T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661b"
+  },
+  "title": "Fahrenheit 451",
+  "author": {
+    "name": "Ray",
+    "surname": "Bradbury",
+    "nationality": "USA"
+  },
+  "pages": 256,
+  "genres": [
+    "Dystopian",
+    "Sci-Fi"
+  ],
+  "description": "A fireman whose job is burning books begins to question why they're forbidden.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/12993656-L.jpg",
+  "releaseDate": "1953-10-19T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661c"
+  },
+  "title": "Dune",
+  "author": {
+    "name": "Frank",
+    "surname": "Herbert",
+    "nationality": "USA"
+  },
+  "pages": 412,
+  "genres": [
+    "Sci-Fi",
+    "Adventure"
+  ],
+  "description": "A noble house's fall thrusts a young heir into the politics of a desert planet.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/11481354-L.jpg",
+  "releaseDate": "1965-08-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661d"
+  },
+  "title": "Foundation",
+  "author": {
+    "name": "Isaac",
+    "surname": "Asimov",
+    "nationality": "USA"
+  },
+  "pages": 255,
+  "genres": [
+    "Sci-Fi"
+  ],
+  "description": "A mathematician predicts the fall of a galactic empire and plans to shorten the dark age after.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14612610-L.jpg",
+  "releaseDate": "1951-05-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661e"
+  },
+  "title": "Neuromancer",
+  "author": {
+    "name": "William",
+    "surname": "Gibson",
+    "nationality": "CAN"
+  },
+  "pages": 271,
+  "genres": [
+    "Sci-Fi"
+  ],
+  "description": "A washed-up hacker is hired for one last job that could break the net wide open.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/283860-L.jpg",
+  "releaseDate": "1984-07-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f11921661f"
+  },
+  "title": "The Hobbit",
+  "author": {
+    "name": "J.R.R.",
+    "surname": "Tolkien",
+    "nationality": "GB"
+  },
+  "pages": 310,
+  "genres": [
+    "Fantasy",
+    "Adventure"
+  ],
+  "description": "A reluctant homebody joins a company of dwarves to reclaim a mountain of treasure.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14627509-L.jpg",
+  "releaseDate": "1937-09-21T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "6ab00204ac83a3f119216620"
+  },
+  "title": "Mort",
+  "author": {
+    "name": "Terry",
+    "surname": "Pratchett",
+    "nationality": "GB"
+  },
+  "pages": 243,
+  "genres": [
+    "Fantasy",
+    "Comedy"
+  ],
+  "description": "Death takes on an apprentice, with predictably chaotic results for the living.",
+  "coverUrl": "https://covers.openlibrary.org/b/id/14648805-L.jpg",
+  "releaseDate": "1987-11-12T00:00:00Z"
+}]
